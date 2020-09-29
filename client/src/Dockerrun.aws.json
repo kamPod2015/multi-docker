@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "podziemie2015/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "podziemie2015/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "podziemie2015/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "podziemie2015/multi-nginx",
+      "hostname": "nginx", //dla pewnoœci
+      "essential": true, //co najmniej jeden kontener musi byæ wymagany, w razie czego reszta siê wy³¹czy
+      "portMapping": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [ "client", "server" ]
+    }
+  ]
+}
