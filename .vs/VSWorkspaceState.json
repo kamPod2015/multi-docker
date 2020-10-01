@@ -3,11 +3,12 @@
     "",
     "\\client",
     "\\client\\nginx",
+    "\\client\\public",
     "\\client\\src",
     "\\nginx",
     "\\server",
     "\\worker"
   ],
-  "SelectedNode": "\\client\\src\\App.test.js",
+  "SelectedNode": "\\docker-compose.yml",
   "PreviewInSolutionExplorer": false
 }
